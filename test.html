@@ -16,7 +16,7 @@
       </thead>
     </table>
     <script>
-      fetch("data_test.csv")
+      fetch("https://shimannamon.github.io/coeiroink/data_test.csv")
         .then((response) => response.text())
         .then((csvText) => {
           const lines = csvText.trim().split("\n");
