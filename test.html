@@ -8,38 +8,30 @@
     <table id="myTable" class="display">
       <thead>
         <tr>
+          <th>ID</th>
           <th>名前</th>
-          <th>ニコニ･コモンズ</th>
-          <th>声質</th>
-          <th>個人<br />非商用</th>
-          <th>個人<br />商用</th>
-          <th>法人</th>
-          <th>直当て</th>
-          <th>他当て</th>
-          <th>アダ<br />ルト</th>
-          <th>グロ</th>
-          <th>設定<br />変更</th>
-          <th>声加工</th>
-          <th>最終反映</th>
+          <th>年齢</th>
+          <th>都市</th>
         </tr>
       </thead>
     </table>
     <script>
-      // JSONファイルを読み込む
-      fetch("data.json") // JSONファイルのパスを指定
-        .then((response) => response.json()) // JSONとして解析
-        .then((data) => {
+      fetch("data_test.csv")
+        .then((response) => response.text())
+        .then((csvText) => {
+          const lines = csvText.trim().split("\n");
+          // ヘッダー行をスキップ
+          const dataLines = lines.slice(1);
           const tableBody = document.getElementById("tableBody");
-
-          // データを表に追加
-          data.forEach((item) => {
+          dataLines.forEach((line) => {
+            const [id, name, age, city] = line.split(",");
             const row = document.createElement("tr");
             row.innerHTML = `
-            <td>${item.id}</td>
-            <td>${item.name}</td>
-            <td>${item.age}</td>
-            <td>${item.city}</td>
-          `;
+              <td>${id}</td>
+              <td>${name}</td>
+              <td>${age}</td>
+              <td>${city}</td>
+            `;
             tableBody.appendChild(row);
           });
         })
