@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSVからテーブルを生成するテスト</title>
+  </head>
+  <body>
+    <table id="myTable" class="display">
+      <thead>
+        <tr>
+          <th>名前</th>
+          <th>ニコニ･コモンズ</th>
+          <th>声質</th>
+          <th>個人<br />非商用</th>
+          <th>個人<br />商用</th>
+          <th>法人</th>
+          <th>直当て</th>
+          <th>他当て</th>
+          <th>アダ<br />ルト</th>
+          <th>グロ</th>
+          <th>設定<br />変更</th>
+          <th>声加工</th>
+          <th>最終反映</th>
+        </tr>
+      </thead>
+    </table>
+    <script>
+      // JSONファイルを読み込む
+      fetch("data.json") // JSONファイルのパスを指定
+        .then((response) => response.json()) // JSONとして解析
+        .then((data) => {
+          const tableBody = document.getElementById("tableBody");
+
+          // データを表に追加
+          data.forEach((item) => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+            <td>${item.id}</td>
+            <td>${item.name}</td>
+            <td>${item.age}</td>
+            <td>${item.city}</td>
+          `;
+            tableBody.appendChild(row);
+          });
+        })
+        .catch((error) => console.error("エラー:", error));
+    </script>
+  </body>
+</html>
