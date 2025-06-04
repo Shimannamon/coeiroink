@@ -22,7 +22,7 @@
         .then((csvText) => {
           const lines = csvText.trim().split("\n");
           // ヘッダー行をスキップ
-          const dataLines = lines.slice(1);
+          const dataLines = lines;
           const tableBody = document.getElementById("tableBody");
           dataLines.forEach((line) => {
             const [id, name, age, city] = line.split(",");
