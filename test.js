@@ -21,7 +21,10 @@ fetch("data_test.csv")
         default:
           name = nameRaw;
       }
-      const cityCell = `<a href="https://google.com/search?q=${city}" target="_blank">${city}</a>`;
+      const cityCell =
+        city === "不明"
+          ? city
+          : `<a href="https://google.com/search?q=${city}" target="_blank">${city}</a>`;
       const row = document.createElement("tr");
       row.innerHTML = `
               <td>${idCell}</td>
