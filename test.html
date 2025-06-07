@@ -2,7 +2,25 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
     <title>CSVからテーブルを生成するテスト</title>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+        position: absolute;
+      }
+      .g {
+        background: #c8e6c9;
+        color: #1b5e20cf;
+      }
+      .r {
+        background: #ffcdd2;
+        color: #b71c1ccf;
+      }
+    </style>
   </head>
   <body>
     <table id="myTable" class="display">
@@ -16,27 +34,6 @@
       </thead>
       <tbody id="tableBody"></tbody>
     </table>
-    <script>
-      fetch("data_test.csv")
-        .then((response) => response.text())
-        .then((csvText) => {
-          const lines = csvText.trim().split("\n");
-          // ヘッダー行をスキップ
-          const dataLines = lines;
-          const tableBody = document.getElementById("tableBody");
-          dataLines.forEach((line) => {
-            const [id, name, age, city] = line.split(",");
-            const row = document.createElement("tr");
-            row.innerHTML = `
-              <td>${id}</td>
-              <td>${name}</td>
-              <td>${age}</td>
-              <td>${city}</td>
-            `;
-            tableBody.appendChild(row);
-          });
-        })
-        .catch((error) => console.error("エラー:", error));
-    </script>
+    <script type="text/javascript" src="test.js"></script>
   </body>
 </html>
