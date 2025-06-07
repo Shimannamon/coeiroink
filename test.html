@@ -20,6 +20,34 @@
         background: #ffcdd2;
         color: #b71c1ccf;
       }
+      table {
+        border-collapse: collapse;
+        & th,
+        & td {
+          text-align: center;
+          font-weight: bold;
+          position: relative;
+          height: 60px;
+          padding: 0;
+        }
+        & th {
+          background: #cfd8dc;
+          &.v {
+            width: 240px;
+          }
+          &:not(.v) {
+            width: 60px;
+          }
+        }
+        & td {
+          border-bottom: 1px solid #9e9e9e;
+          &.material-symbols-outlined {
+            font-size: 30px;
+            left: 15px;
+            top: 15px;
+          }
+        }
+      }
     </style>
   </head>
   <body>
