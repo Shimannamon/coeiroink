@@ -22,7 +22,7 @@ fetch("/coeiroink/data_test.csv")
               <td>${id}</td>
               <td>${name}</td>
               <td>${age}</td>
-              <td>${cityCell}</td>
+              <td>${city}</td>
             `;
       tableBody.appendChild(row);
     });
