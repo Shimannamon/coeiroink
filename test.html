@@ -23,6 +23,9 @@
       }
       table {
         border-collapse: collapse;
+        & tr {
+          border-bottom: 3px solid #9e9e9e;
+        }
         & th,
         & td {
           text-align: center;
@@ -39,14 +42,11 @@
             width: 60px;
           }
         }
-        & td {
-          border-bottom: 1px solid #9e9e9e;
-          & .material-symbols-outlined {
-            top: 0;
-            left: 0;
-            padding: 14.5px 15px;
-            font-size: 30px;
-          }
+        & td .material-symbols-outlined {
+          top: 0;
+          left: 0;
+          padding: 13.5px 15px;
+          font-size: 30px;
         }
       }
     </style>
