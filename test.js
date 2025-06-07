@@ -5,22 +5,23 @@ fetch("data_test.csv")
     const dataLines = lines;
     const tableBody = document.getElementById("tableBody");
     dataLines.forEach((line) => {
-      const [id, name, age, city] = line.split(",");
-      let nameCell;
-      switch (name) {
+      const [id, nameRaw, age, cityRaw] = line.split(",");
+      let name;
+      switch (nameRaw) {
         case "太郎":
-          nameCell = `<span class="material-symbols-outlined g">circle</span>`;
+          name = `<span class="material-symbols-outlined g">circle</span>`;
           break;
         case "花子":
-          nameCell = `<span class="material-symbols-outlined r">square</span>`;
+          name = `<span class="material-symbols-outlined r">square</span>`;
           break;
         default:
-          nameCell = name;
+          name = nameRaw;
       }
+      const city = cityRaw.trim();
       const row = document.createElement("tr");
       row.innerHTML = `
               <td>${id}</td>
-              <td>${nameCell}</td>
+              <td>${name}</td>
               <td>${age}</td>
               <td>${city}</td>
             `;
