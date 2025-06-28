@@ -36,6 +36,7 @@ body {
   background-color: var(--light);
   & header {
     min-width: 720px;
+    margin-bottom: 30px;
     background-color: var(--dark);
     & h1 {
       font-size: 2rem;
