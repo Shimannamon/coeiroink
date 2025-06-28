@@ -86,7 +86,7 @@ body {
     font-size: 7.5px;
   }
   & .callout {
-    margin: 15px;
+    margin: 0 15px;
     padding: 15px;
     background-color: var(--light-hover);
   }
