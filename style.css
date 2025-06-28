@@ -147,7 +147,7 @@ table {
     & .material-symbols-outlined {
       top: 0;
       left: 0;
-      padding: 15px;
+      padding: 14.5px 15px;
     }
   }
   & .hidden {
